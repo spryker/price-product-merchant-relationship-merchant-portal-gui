@@ -87,7 +87,7 @@ class MerchantRelationshipVolumePriceProductValidator implements MerchantRelatio
             return false;
         }
 
-        return $priceProductTransfer->getPriceDimensionOrFail()->getIdMerchantRelationship() !== null
+        return $priceProductTransfer->getPriceDimensionOrFail()->getIdMerchantRelationship() !== null // @phpstan-ignore notIdentical.alwaysTrue
             && $priceData[static::VOLUME_PRICES_KEY][0][static::VOLUME_PRICE_QUANTITY] > 1;
     }
 }
