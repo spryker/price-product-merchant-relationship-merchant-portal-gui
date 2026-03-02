@@ -9,10 +9,5 @@ namespace Spryker\Zed\PriceProductMerchantRelationshipMerchantPortalGui\Communic
 
 interface MerchantRelationshipReaderInterface
 {
-    /**
-     * @param int $idMerchantRelationship
-     *
-     * @return string|null
-     */
     public function findMerchantRelationshipNameByIdMerchantRelationship(int $idMerchantRelationship): ?string;
 }

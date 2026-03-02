@@ -104,11 +104,6 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
      */
     protected $translatorFacade;
 
-    /**
-     * @param \Spryker\Zed\PriceProductMerchantRelationshipMerchantPortalGui\Dependency\Facade\PriceProductMerchantRelationshipMerchantPortalGuiToMerchantUserFacadeInterface $merchantUserFacade
-     * @param \Spryker\Zed\PriceProductMerchantRelationshipMerchantPortalGui\Dependency\Facade\PriceProductMerchantRelationshipMerchantPortalGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade
-     * @param \Spryker\Zed\PriceProductMerchantRelationshipMerchantPortalGui\Dependency\Facade\PriceProductMerchantRelationshipMerchantPortalGuiToTranslatorFacadeInterface $translatorFacade
-     */
     public function __construct(
         PriceProductMerchantRelationshipMerchantPortalGuiToMerchantUserFacadeInterface $merchantUserFacade,
         PriceProductMerchantRelationshipMerchantPortalGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade,
@@ -119,11 +114,6 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
         $this->translatorFacade = $translatorFacade;
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface
-     */
     public function expand(GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder): GuiTableConfigurationBuilderInterface
     {
         $guiTableConfigurationBuilder = $this->addCustomerColumn($guiTableConfigurationBuilder);
@@ -136,11 +126,6 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
         return $guiTableConfigurationBuilder;
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface
-     */
     protected function addFilters(GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder): GuiTableConfigurationBuilderInterface
     {
         $guiTableConfigurationBuilder
@@ -154,11 +139,6 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
         return $guiTableConfigurationBuilder;
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface
-     */
     protected function addCustomerColumn(GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder): GuiTableConfigurationBuilderInterface
     {
         $guiTableConfigurationBuilder
@@ -186,11 +166,6 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
         return $guiTableConfigurationBuilder->setColumns($guiTableColumnConfigurationTransfers);
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface
-     */
     protected function replaceVolumeQuantityColumnWithDynamicOne(
         GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
     ): GuiTableConfigurationBuilderInterface {
@@ -263,22 +238,12 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
         return $customerColumn + $columns;
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface
-     */
     protected function expandPriceSaveUrl(
         GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
     ): GuiTableConfigurationBuilderInterface {
         return $guiTableConfigurationBuilder->enableInlineDataEditing($this->getSavePriceUrl());
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface
-     */
     protected function expandPriceDeleteUrl(
         GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
     ): GuiTableConfigurationBuilderInterface {
@@ -288,9 +253,6 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
         return $guiTableConfigurationBuilder;
     }
 
-    /**
-     * @return string
-     */
     protected function getSavePriceUrl(): string
     {
         return sprintf(
@@ -307,9 +269,6 @@ class PriceProductAbstractTableConfigurationExpander implements PriceProductAbst
         );
     }
 
-    /**
-     * @return string
-     */
     protected function getDeletePriceUrl(): string
     {
         return sprintf(

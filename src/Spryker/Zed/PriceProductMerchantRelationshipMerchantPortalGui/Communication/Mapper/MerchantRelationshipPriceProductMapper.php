@@ -41,20 +41,11 @@ class MerchantRelationshipPriceProductMapper implements MerchantRelationshipPric
      */
     protected $merchantRelationshipReader;
 
-    /**
-     * @param \Spryker\Zed\PriceProductMerchantRelationshipMerchantPortalGui\Communication\Reader\MerchantRelationshipReaderInterface $merchantRelationshipReader
-     */
     public function __construct(MerchantRelationshipReaderInterface $merchantRelationshipReader)
     {
         $this->merchantRelationshipReader = $merchantRelationshipReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     * @param \Generated\Shared\Transfer\PriceProductTableViewTransfer $priceProductTableViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTableViewTransfer
-     */
     public function mapPriceProductTransferToPriceProductTableViewTransfer(
         PriceProductTransfer $priceProductTransfer,
         PriceProductTableViewTransfer $priceProductTableViewTransfer

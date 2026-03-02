@@ -17,19 +17,11 @@ class MerchantRelationshipReader implements MerchantRelationshipReaderInterface
      */
     protected $merchantRelationshipFacade;
 
-    /**
-     * @param \Spryker\Zed\PriceProductMerchantRelationshipMerchantPortalGui\Dependency\Facade\PriceProductMerchantRelationshipMerchantPortalGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade
-     */
     public function __construct(PriceProductMerchantRelationshipMerchantPortalGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade)
     {
         $this->merchantRelationshipFacade = $merchantRelationshipFacade;
     }
 
-    /**
-     * @param int $idMerchantRelationship
-     *
-     * @return string|null
-     */
     public function findMerchantRelationshipNameByIdMerchantRelationship(int $idMerchantRelationship): ?string
     {
         $merchantRelationshipTransfer = $this->merchantRelationshipFacade->findMerchantRelationshipById(

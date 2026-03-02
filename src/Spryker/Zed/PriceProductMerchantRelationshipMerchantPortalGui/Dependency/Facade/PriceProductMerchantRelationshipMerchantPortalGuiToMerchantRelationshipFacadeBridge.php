@@ -42,11 +42,6 @@ class PriceProductMerchantRelationshipMerchantPortalGuiToMerchantRelationshipFac
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipTransfer $merchantRelationshipTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer|null
-     */
     public function findMerchantRelationshipById(MerchantRelationshipTransfer $merchantRelationshipTransfer): ?MerchantRelationshipTransfer
     {
         return $this->merchantRelationshipFacade->findMerchantRelationshipById(

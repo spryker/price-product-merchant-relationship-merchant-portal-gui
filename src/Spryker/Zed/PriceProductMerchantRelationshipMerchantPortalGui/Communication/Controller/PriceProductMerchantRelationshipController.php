@@ -28,11 +28,6 @@ class PriceProductMerchantRelationshipController extends AbstractController
      */
     protected const PARAM_VOLUME_QUANTITY = 'volumeQuantity';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function volumePriceDataAction(Request $request): Response
     {
         $inputType = GuiTableConfigurationBuilderInterface::COLUMN_TYPE_INPUT;

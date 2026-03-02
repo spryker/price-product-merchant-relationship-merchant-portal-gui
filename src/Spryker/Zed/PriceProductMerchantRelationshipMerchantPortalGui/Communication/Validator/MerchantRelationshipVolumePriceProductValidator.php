@@ -35,9 +35,6 @@ class MerchantRelationshipVolumePriceProductValidator implements MerchantRelatio
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \Spryker\Zed\PriceProductMerchantRelationshipMerchantPortalGui\Dependency\Service\PriceProductMerchantRelationshipMerchantPortalGuiToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(PriceProductMerchantRelationshipMerchantPortalGuiToUtilEncodingServiceInterface $utilEncodingService)
     {
         $this->utilEncodingService = $utilEncodingService;
@@ -68,11 +65,6 @@ class MerchantRelationshipVolumePriceProductValidator implements MerchantRelatio
         return $validationResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return bool
-     */
     protected function isMerchantRelationshipVolumePrice(PriceProductTransfer $priceProductTransfer): bool
     {
         if (!$priceProductTransfer->getPriceDimensionOrFail()->getIdMerchantRelationship()) {
